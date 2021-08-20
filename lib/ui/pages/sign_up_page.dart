@@ -20,7 +20,7 @@ class SignUpPage extends StatelessWidget {
     }
 
     Widget inputSection() {
-      Widget emailInput() {
+      Widget nameInput() {
         return Container(
           margin: EdgeInsets.only(bottom: 20),
           child: Column(
@@ -28,6 +28,7 @@ class SignUpPage extends StatelessWidget {
             children: [
               Text(
                 'Full Name',
+                style: blackTextStyle,
               ),
               SizedBox(
                 height: 6,
@@ -36,6 +37,9 @@ class SignUpPage extends StatelessWidget {
                 cursorColor: kBlackColor,
                 decoration: InputDecoration(
                   hintText: 'Your full name',
+                  hintStyle: greyTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(defaultRadius),
                   ),
@@ -52,6 +56,138 @@ class SignUpPage extends StatelessWidget {
         );
       }
 
+      Widget emailInput() {
+        return Container(
+          margin: EdgeInsets.only(bottom: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Email Address',
+                style: blackTextStyle,
+              ),
+              SizedBox(
+                height: 6,
+              ),
+              TextFormField(
+                cursorColor: kBlackColor,
+                decoration: InputDecoration(
+                  hintText: 'Your email address',
+                  hintStyle: greyTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                    borderSide: BorderSide(
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+
+      Widget passwordInput() {
+        return Container(
+          margin: EdgeInsets.only(bottom: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Password',
+                style: blackTextStyle,
+              ),
+              SizedBox(
+                height: 6,
+              ),
+              TextFormField(
+                cursorColor: kBlackColor,
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Your password',
+                  hintStyle: greyTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                    borderSide: BorderSide(
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+
+      Widget hobbyInput() {
+        return Container(
+          margin: EdgeInsets.only(bottom: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hobby',
+                style: blackTextStyle,
+              ),
+              SizedBox(
+                height: 6,
+              ),
+              TextFormField(
+                cursorColor: kBlackColor,
+                decoration: InputDecoration(
+                  hintText: 'Your hobby',
+                  hintStyle: greyTextStyle.copyWith(
+                    fontSize: 16,
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(defaultRadius),
+                    borderSide: BorderSide(
+                      color: kPrimaryColor,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
+      }
+
+      Widget submitButton() {
+        return Container(
+          height: 55,
+          width: double.infinity,
+          child: TextButton(
+            onPressed: () {},
+            style: TextButton.styleFrom(
+              backgroundColor: kPrimaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(defaultRadius),
+              ),
+            ),
+            child: Text(
+              'Get Started',
+              style: whiteTextStyle.copyWith(
+                fontSize: 18,
+                fontWeight: medium,
+              ),
+            ),
+          ),
+        );
+      }
+
       return Container(
         margin: EdgeInsets.only(top: 30),
         padding: EdgeInsets.symmetric(
@@ -64,8 +200,27 @@ class SignUpPage extends StatelessWidget {
         ),
         child: Column(
           children: [
+            nameInput(),
             emailInput(),
+            passwordInput(),
+            hobbyInput(),
+            submitButton(),
           ],
+        ),
+      );
+    }
+
+    Widget tacButton() {
+      return Container(
+        alignment: Alignment.center,
+        margin: EdgeInsets.only(top: 20),
+        child: Text(
+          'Terms and Conditions',
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+            decoration: TextDecoration.underline,
+          ),
         ),
       );
     }
@@ -80,6 +235,7 @@ class SignUpPage extends StatelessWidget {
           children: [
             title(),
             inputSection(),
+            tacButton(),
           ],
         ),
       ),
