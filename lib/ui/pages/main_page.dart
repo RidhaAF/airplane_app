@@ -1,4 +1,5 @@
 import 'package:airplane_app/shared/theme.dart';
+import 'package:airplane_app/ui/widgets/custom_bottom_navigation_item.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
@@ -24,97 +25,18 @@ class MainPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icon_home.png'),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 2,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(defaultRadius),
-                    ),
-                  ),
-                ],
+              CustomBottomNaviagtionItem(
+                imageUrl: 'assets/icon_home.png',
+                isSelected: true,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icon_booking.png'),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 2,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: kTransparentColor,
-                      borderRadius: BorderRadius.circular(defaultRadius),
-                    ),
-                  ),
-                ],
+              CustomBottomNaviagtionItem(
+                imageUrl: 'assets/icon_booking.png',
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icon_card.png'),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 2,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: kTransparentColor,
-                      borderRadius: BorderRadius.circular(defaultRadius),
-                    ),
-                  ),
-                ],
+              CustomBottomNaviagtionItem(
+                imageUrl: 'assets/icon_card.png',
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(),
-                  Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/icon_settings.png'),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height: 2,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: kTransparentColor,
-                      borderRadius: BorderRadius.circular(defaultRadius),
-                    ),
-                  ),
-                ],
+              CustomBottomNaviagtionItem(
+                imageUrl: 'assets/icon_settings.png',
               ),
             ],
           ),
