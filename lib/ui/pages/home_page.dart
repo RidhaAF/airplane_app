@@ -1,4 +1,5 @@
 import 'package:airplane_app/shared/theme.dart';
+import 'package:airplane_app/ui/widgets/destination_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -56,68 +57,42 @@ class HomePage extends StatelessWidget {
     Widget popularDestionations() {
       return Container(
         margin: EdgeInsets.only(top: 30),
-        child: Row(
-          children: [
-            Container(
-              height: 320,
-              width: 200,
-              margin: EdgeInsets.only(left: defaultMargin),
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(defaultRadius),
-                color: kWhiteColor,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              DestinationCard(
+                name: 'Lake Ciliwung',
+                city: 'Tangerang',
+                imageUrl: 'assets/image_destination1.png',
+                rating: 4.8,
               ),
-              child: Column(
-                children: [
-                  Container(
-                    height: 220,
-                    width: 180,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(defaultRadius),
-                      image: DecorationImage(
-                        image: AssetImage('assets/image_destination1.png'),
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        height: 30,
-                        width: 60,
-                        decoration: BoxDecoration(
-                          color: kWhiteColor,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(defaultMargin),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: 20,
-                              width: 20,
-                              margin: EdgeInsets.only(right: 2),
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('assets/icon_star.png'),
-                                ),
-                              ),
-                            ),
-                            Text(
-                              '4.8',
-                              style: blackTextStyle.copyWith(
-                                fontWeight: medium,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              DestinationCard(
+                name: 'White Houses',
+                city: 'Spain',
+                imageUrl: 'assets/image_destination2.png',
+                rating: 4.7,
               ),
-            ),
-          ],
+              DestinationCard(
+                name: 'Hill Heyo',
+                city: 'Monaco',
+                imageUrl: 'assets/image_destination3.png',
+                rating: 4.8,
+              ),
+              DestinationCard(
+                name: 'Menarra',
+                city: 'Japan',
+                imageUrl: 'assets/image_destination4.png',
+                rating: 5.0,
+              ),
+              DestinationCard(
+                name: 'Payung Teduh',
+                city: 'Singapore',
+                imageUrl: 'assets/image_destination5.png',
+                rating: 4.8,
+              ),
+            ],
+          ),
         ),
       );
     }
