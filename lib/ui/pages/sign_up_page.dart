@@ -32,14 +32,14 @@ class SignUpPage extends StatelessWidget {
       Widget emailInput() {
         return CustomTextFormField(
           title: 'Email Address',
-          hintText: 'Your emdail address',
+          hintText: 'Your email address',
         );
       }
 
       Widget passwordInput() {
         return CustomTextFormField(
           title: 'Password',
-          hintText: 'Your Password',
+          hintText: 'Your password',
           obsecureText: true,
         );
       }
