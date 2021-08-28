@@ -1,4 +1,5 @@
 import 'package:airplane_app/shared/theme.dart';
+import 'package:airplane_app/ui/widgets/photo_item.dart';
 import 'package:flutter/material.dart';
 
 class DetailPage extends StatelessWidget {
@@ -137,6 +138,30 @@ class DetailPage extends StatelessWidget {
                     style: blackTextStyle.copyWith(
                       height: 2,
                     ),
+                  ),
+
+                  // NOTE: PHOTOS
+                  SizedBox(height: 20),
+                  Text(
+                    'Photos',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: semiBold,
+                    ),
+                  ),
+                  SizedBox(height: 6),
+                  Row(
+                    children: [
+                      PhotoItem(
+                        imageUrl: 'assets/image_photo1.png',
+                      ),
+                      PhotoItem(
+                        imageUrl: 'assets/image_photo2.png',
+                      ),
+                      PhotoItem(
+                        imageUrl: 'assets/image_photo3.png',
+                      ),
+                    ],
                   ),
                 ],
               ),
