@@ -21,7 +21,7 @@ class AuthService {
           hobby: hobby,
           balance: 280000000);
 
-      await userService().setUser(user);
+      await UserService().setUser(user);
 
       return user;
     } catch (e) {
