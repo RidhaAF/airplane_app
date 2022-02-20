@@ -4,10 +4,14 @@ import 'package:airplane_app/ui/pages/get_started_page.dart';
 import 'package:airplane_app/ui/pages/main_page.dart';
 import 'package:airplane_app/ui/pages/sign_up_page.dart';
 import 'package:airplane_app/ui/pages/splash_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
